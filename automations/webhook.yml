@@ -1,0 +1,23 @@
+name: Webhook
+do:
+  - Custom Code.run function:
+      function: CleanData
+      output: cleanData
+  - emit:
+      autocomplete: {}
+      payload:
+        body: '{{body}}'
+        headers: '{{headers}}'
+        data: '{{cleanData}}'
+      event: summary-event
+when:
+  events: []
+  endpoint: true
+output:
+  message: '{{cleanData}}'
+slug: webhook
+arguments:
+  firstName:
+    type: string
+  lastName:
+    type: string

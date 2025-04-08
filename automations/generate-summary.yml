@@ -1,0 +1,20 @@
+slug: generate-summary
+name: Generate Summary
+do:
+  - Knowledge Client.chat-completion:
+      messages:
+        - role: system
+          content: >-
+            Create a brief summary from a JSON object, focusing on key details
+            and overarching information contained within, ensuring clarity and
+            conciseness in the summary.
+        - role: user
+          content: '{{payload.data}}'
+      output: genAIData
+when:
+  events:
+    - summary-event
+  endpoint: false
+output: '{{genAIData.response}}'
+arguments: {}
+private: true

@@ -1,0 +1,29 @@
+appSlug: Custom Code
+appName: Custom Code
+config:
+  functions:
+    CleanData:
+      code: |-
+        return [
+          {
+            "id": 1,
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "isActive": true,
+            "roles": ["admin", "user"]
+          },
+          {
+            "id": 2,
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com",
+            "isActive": false,
+            "roles": ["user"]
+          }
+        ];
+      parameters:
+        data:
+          type: string
+  uploads_config:
+    url: https://api.studio.prisme.ai/v2/workspaces/lhFyNAg/files
+    api_key: db63daf7-af9e-42e3-8ee6-b65b3f7c0df8
+slug: Custom Code
